@@ -3,8 +3,6 @@ node{
 		git 'https://github.com/kipu23/java-helloworld'
 	}
 	stage('compile-package'){
-		steps{
-			sh 'mvn package'
-		}
+			sh 'mvn compile'
 	}
 }
