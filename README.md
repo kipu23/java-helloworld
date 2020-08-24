@@ -1,5 +1,3 @@
 # java-helloworld
 
-Added some modifiations before move
-
-ADded some modifications again before move
+Addec some modifiations before move
