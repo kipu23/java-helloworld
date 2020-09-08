@@ -1,8 +1,17 @@
-node{
-	stage('git checkout'){
-		git branch: 'master', credentialsId: 'github-kipu23', url: 'https://github.com/kipu23/java-helloworld.git'
+pipeline {
+	agent any
+	stages {
+		stage("Build") {
+			steps {
+				sh "mvn -version"
+				sh "mvn clean install"
+			}
+		}
 	}
-	stage('compile-package'){
-			bat 'mvn compile'
+	
+	post {
+		always {
+			cleanWs()
+		}
 	}
 }
