@@ -1,7 +1,6 @@
 pipeline {
 	agent {
-		docker {
-			image "maven:3.6.3-openjdk-16"
+		dockerfile {
 			label "docker"
 		}
 	}
@@ -9,6 +8,7 @@ pipeline {
 	stages {
 		stage("Build") {
 			steps {
+				sh "ssh -V"
 				sh "mvn -version"
 				sh "mvn clean install"
 			}
