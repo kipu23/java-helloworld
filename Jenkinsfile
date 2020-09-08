@@ -1,8 +1,20 @@
-node{
-	stage('git checkout'){
-		git 'https://github.com/kipu23/java-helloworld'
+pipeline {
+	agent any
+	tools {
+		maven "3.6.3"
 	}
-	stage('compile-package'){
-			bat 'mvn compile'
+	stages {
+		stage("Build") {
+			steps {
+				sh "mvn -version"
+				sh "mvn clean install"
+			}
+		}
+	}
+	
+	post {
+		always {
+			cleanWs()
+		}
 	}
 }
