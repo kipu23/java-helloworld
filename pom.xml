@@ -40,6 +40,7 @@
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.0.2</version>
                 <configuration>
+								<finalName>${project.artifactId}-${project.version}-r${buildNumber}</finalName> 
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
@@ -65,50 +66,41 @@
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
         </plugin>
+
+				
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>buildnumber-maven-plugin</artifactId>
+					<version>1.4</version>
+					<executions>
+						<execution>
+							<phase>validate</phase>
+							<goals>
+								<goal>create</goal>
+							</goals>
+						</execution>
+					</executions>
+					<configuration>
+						<doCheck>false</doCheck>
+						<doUpdate>true</doUpdate>
+					</configuration>
+				</plugin>
+
       </plugins>
     </pluginManagement>
+    <plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+					<artifactId>buildnumber-maven-plugin</artifactId>
+			</plugin>
+    </plugins>
+		
   </build>
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-<!--
-  <dependencies>
-    <dependency>
-      <groupId>oracle</groupId>
-      <artifactId>ojdbc6</artifactId>
-      <version>11.2.0.3</version>
-    </dependency>
-    <dependency>
-      <groupId>de.odysseus.staxon</groupId>
-      <artifactId>staxon</artifactId>
-      <version>1.3</version>
-    </dependency>
-  </dependencies>
-  
-  <repositories>
-    <repository>
-      <id>datanucleus</id>
-      <name>Datanucleus</name>
-      <url>http://www.datanucleus.org/downloads/maven2/</url>
-    </repository>
-  </repositories>
--->
-
-
+	<scm>
+		<url>scm:git:https://github.com/kipu23/java-helloworld.git</url>
+		<connection>scm:git:https://github.com/kipu23/java-helloworld.git</connection>
+		<developerConnection>scm:git:https://github.com/kipu23/java-helloworld.git</developerConnection>
+	</scm>
 
 </project>
