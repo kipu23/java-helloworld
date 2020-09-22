@@ -1,21 +1,27 @@
 package com.krisz.helloworld;
 
-//the class of the program
-public class Helloworld {
-	
-	//The string to output
-	private final String message = "Hello World!";
-	
-	//Constructor of the class
-	public Helloworld() {}
-	
-	//Main method, this will be executed first
-    public static void main(String[] args) {
-        System.out.println(new Helloworld().getMessage());
-    }
+import java.io.IOException;
+import java.net.URL;
+import java.util.Enumeration;
+import java.util.jar.Attributes;
+import java.util.jar.Manifest;
 
-	//Method to retrive the message string
-	private final String getMessage(){
-		return message;
-	}
+public class Helloworld {
+
+    public static void main(String[] args) throws IOException {
+
+        System.out.println("Hello World!");
+
+		Enumeration<URL> resources = Helloworld.class.getClassLoader().getResources("META-INF/MANIFEST.MF");
+		while (resources.hasMoreElements()) {
+			try {
+				Manifest manifest = new Manifest(resources.nextElement().openStream());
+				Attributes attr = manifest.getMainAttributes();
+				System.out.println(attr.getValue("Git-SHA"));
+			} catch (IOException E) {
+				// handle
+			}
+		}
+
+    }
 }
