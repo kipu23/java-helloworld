@@ -45,7 +45,7 @@
                         <manifest>
 													<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
                           <addClasspath>true</addClasspath>
-                          <mainClass>com.krisz.helloworld.Helloworld</mainClass>
+                          <mainClass>com.krisz.helloworld.HelloWorld</mainClass>
                         </manifest>
 												<manifestEntries>
 													<Git-SHA>${buildNumber}</Git-SHA>
