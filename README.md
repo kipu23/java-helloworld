@@ -2,7 +2,7 @@
 
 This java program prints the "Hello World" message to the console, and demostrates some simple java features.
 
-----Features:
+##Features:
 - Prints the string "Hello World" to the console.
 - Prints the Git-SHA number to the console.
 
