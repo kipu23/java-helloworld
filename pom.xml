@@ -100,7 +100,22 @@
     </plugins>
 		
   </build>
-  
+  <dependencies>
+
+      <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+      <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-api</artifactId>
+          <version>1.7.30</version>
+      </dependency>
+
+      <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-simple</artifactId>
+          <version>1.7.30</version>
+      </dependency>
+
+  </dependencies>
 	<scm>
 		<url>scm:git:https://github.com/kipu23/java-helloworld.git</url>
 		<connection>scm:git:https://github.com/kipu23/java-helloworld.git</connection>
